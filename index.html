@@ -1,90 +1,147 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>陳穎鋒的個人履歷</title>
   <style>
+    :root {
+      --bg-color: #fffaf0;
+      --text-color: #1e3932;
+      --accent-color: #3a5a40;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #f5f5f5;
+      --accent-color: #a3d9a5;
+    }
+
     body {
       font-family: "微軟正黑體", sans-serif;
-      background-color: #f5faff;
-      color: #333;
-      line-height: 1.6;
-      padding: 40px;
-      max-width: 800px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
+      margin: 0;
+      padding: 20px;
+      max-width: 900px;
       margin: auto;
+      transition: all 0.3s ease;
     }
+
     img {
       width: 180px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       display: block;
       margin: 0 auto 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
     h1, h2 {
       text-align: center;
+      color: var(--accent-color);
     }
-    .contact {
-      text-align: center;
-      margin-bottom: 30px;
+
+    .contact, .section {
+      margin: 20px 0;
     }
-    button, .download-link {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #0078D7;
+
+    .btn, .download-link, .toggle-theme {
+      background-color: var(--accent-color);
       color: white;
+      padding: 10px 20px;
+      text-decoration: none;
       border: none;
       border-radius: 5px;
-      text-decoration: none;
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
+      display: inline-block;
+      margin: 10px auto;
+      text-align: center;
       cursor: pointer;
+    }
+
+    .btn:hover, .toggle-theme:hover {
+      background-color: #2f4f3e;
+    }
+
+    .center {
       text-align: center;
     }
-    button:hover, .download-link:hover {
-      background-color: #005ea6;
+
+    form {
+      background-color: #ffffffcc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
     }
   </style>
 </head>
 <body>
 
+  <button class="toggle-theme" onclick="toggleMode()">🌗 切換日夜模式</button>
+
   <h1>陳穎鋒的個人網頁</h1>
-  <img src="https://github.com/FongCYF/-/blob/main/photo.jpg?raw=true" alt="陳穎鋒的照片">
-  
-  <div class="contact">
+  <img src="https://github.com/FongCYF/-/blob/main/photo.jpg?raw=true" alt="陳穎鋒的照片" />
+
+  <div class="contact center">
     <p><strong>電話：</strong>0903-555-273</p>
     <p><strong>Email：</strong>pipi9291@gmail.com</p>
     <p><strong>生日：</strong>2003 年 9 月 1 日</p>
+    <a href="resume.pdf" class="download-link" target="_blank">📄 下載我的履歷 PDF</a>
   </div>
 
-  <h2>自我介紹</h2>
-  <p>
-    我是一位性格理性、做事有條理且邏輯清晰的人。面對問題時，我傾向冷靜分析與思考解決方案，具備隨機應變的能力，不喜歡逃避問題。<br>
-    我在做事與人際關係上較為圓融，擅長與不同背景的人溝通與協作。
-  </p>
+  <div class="section">
+    <h2>自我介紹</h2>
+    <p>
+      我是一位性格理性、做事有條理且邏輯清晰的人。面對問題時，我傾向冷靜分析與思考解決方案，具備隨機應變的能力，不喜歡逃避問題。<br>
+      我在做事與人際關係上較為圓融，擅長與不同背景的人溝通與協作。
+    </p>
+    <p>
+      我高中就讀國際貿易，後來讀財務金融，但在經歷一段住院休學期間，重新思考人生方向，轉而投身於資訊科技與程式開發的領域，目前持續自學中。
+    </p>
+  </div>
 
-  <p>
-    我高中就讀國際貿易，後來讀財務金融，但在經歷一段住院休學期間，重新思考人生方向，轉而投身於資訊科技與程式開發的領域，目前持續自學中。
-  </p>
+  <div class="section">
+    <h2>技能專長</h2>
+    <ul>
+      <li>程式語言：HTML、CSS、JavaScript（持續進修中）</li>
+      <li>文書工具：Word、Excel、PowerPoint、Canva</li>
+      <li>活動經驗：活動規劃、時程控管、人力調配、領導與團隊合作能力</li>
+    </ul>
+  </div>
 
-  <h2>技能專長</h2>
-  <ul>
-    <li>程式語言：HTML、CSS、JavaScript（持續進修中）</li>
-    <li>文書工具：Word、Excel、PowerPoint、Canva</li>
-    <li>活動經驗：活動規劃、時程控管、人力調配、領導與團隊合作能力</li>
-  </ul>
-
-  <button onclick="sayHello()">點我打聲招呼</button>
-
-  <!-- 下載履歷 PDF 按鈕 -->
-  <a href="陳穎鋒 履歷 .pdf" class="download-link" download>📄 下載我的履歷 PDF</a>
+  <div class="section">
+    <h2>聯絡我</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" name="name" placeholder="您的名字" required />
+      <input type="email" name="email" placeholder="您的 Email" required />
+      <textarea name="message" rows="4" placeholder="留言內容..." required></textarea>
+      <div class="center">
+        <button type="submit" class="btn">📩 送出表單</button>
+      </div>
+    </form>
+  </div>
 
   <script>
-    function sayHello() {
-      alert('你好，我是陳穎鋒，謝謝你來看我的網頁！🎉');
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("感謝您的留言！我們會盡快與您聯繫。");
     }
   </script>
 
 </body>
 </html>
+
 
